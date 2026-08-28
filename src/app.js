@@ -3,21 +3,18 @@ import "./App.css";
 function App() {
   const [name, setName] = useState("");
   const [loggedIn, setLoggedIn] = useState(false);
-
   const inputRef = useRef();
-
   const handleLogin = () => {
     setName(inputRef.current.value);
     setLoggedIn(true);
   };
 
   return (
-    <>
+    <div className="title">
       {loggedIn ? (
-        <h1>Welcome {name}</h1>
+        <h1>Welcome Student {name}</h1>
       ) : (
         <>
-        <form class="container">
           <input
             type="text"
             ref={inputRef}
@@ -26,10 +23,10 @@ function App() {
           <button onClick={handleLogin}>
             Login
           </button>
-          </form>
         </>
       )}
-    </>
+    </div>
+   
   );
 }
 
